@@ -1,31 +1,34 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { createResolver } from "@nuxt/kit";
+import { createResolver } from '@nuxt/kit';
 const { resolve } = createResolver(import.meta.url);
+
 export default defineNuxtConfig({
   devServer: {
     port: 8889,
-    host: "",
+    host: '',
   },
 
   // app config
   app: {
     // global transition
-    pageTransition: { name: "page", mode: "out-in" },
-    layoutTransition: { name: "layout", mode: "out-in" },
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
   components: [
     {
-      prefix: "Layout",
-      path: resolve("./components/layouts"),
+      prefix: 'Layout',
+      path: resolve('./components/layouts'),
     },
   ],
 
   imports: {
-    dirs: ["stores"],
+    dirs: ['stores'],
   },
-
-  compatibilityDate: "2024-04-03",
+  alias: {
+    public: '/<srcDir>/public',
+  },
+  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxtjs/device"],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/device'],
 });
