@@ -12,3 +12,9 @@ useHead({
     </NuxtLayout>
   </Body>
 </template>
+
+<style lang="scss">
+html {
+  font-family: inherit
+}
+</style>
