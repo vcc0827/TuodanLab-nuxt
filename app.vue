@@ -13,7 +13,7 @@ useHead({
   </Body>
 </template>
 
-<style lang="scss">
+<style>
 html {
   font-family: inherit
 }
